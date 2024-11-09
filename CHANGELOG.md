@@ -1,5 +1,11 @@
 # smatter-cli
 
+## 1.0.2
+
+### Patch Changes
+
+- 00b411f: changed ascii art
+
 ## 1.0.1
 
 ### Patch Changes
