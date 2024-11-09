@@ -1,3 +1,3 @@
 **Smatter CLI**
 
-A CLI tool for Smatter.
+A CLI tool for Smatter. Currently unfinished!
