@@ -1,0 +1,5 @@
+---
+'smatter-cli': patch
+---
+
+init
