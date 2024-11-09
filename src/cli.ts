@@ -31,9 +31,9 @@ async function prompt<T>(callback: () => Promise<T>): Promise<T> {
 async function main() {
   console.clear();
 
-  // Setup signal handlers for Ctrl+C
+  // setup signal handlers for Ctrl+C
   process.on('SIGINT', () => {
-    console.log('\n'); // Add newline for cleaner output
+    console.log('\n');
     handleCancel();
   });
   process.on('SIGTERM', () => {
@@ -57,7 +57,6 @@ async function main() {
     `Welcome to the Smatter CLI!\nAnswer a few questions, and we'll clone the project to your machine and set up a git branch for you.`,
   );
 
-  // Case type selection using the prompt wrapper
   const caseType = await prompt(() =>
     select({
       message: 'Which part of the case would you like to work on?',
@@ -100,7 +99,7 @@ async function main() {
     s.stop('Repository cloned successfully');
 
     // cd into the project directory
-    process.chdir('./smatter');
+    // process.chdir('./smatter');
 
     // create and checkout work branch --- we might want to have it pre-created
     const branchName = `assessment/${username.toString()}/${caseType}`;
