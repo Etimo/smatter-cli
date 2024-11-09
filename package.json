@@ -1,0 +1,30 @@
+{
+  "license": "MIT",
+  "name": "smatter-cli",
+  "version": "1.0.0",
+  "description": "Cli for Smatter",
+  "keywords": [],
+  "homepage": "",
+  "bugs": {
+    "url": ""
+  },
+  "author": "Henrik Westöö <henrik.westoo@etimo.se>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/henrik-westoo/smatter-cli.git"
+  },
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "devDependencies": {
+    "prettier": "^3.3.3",
+    "typescript": "^5.6.3"
+  },
+  "scripts": {
+    "build": "tsc",
+    "ci": "npm run build && npm run check-format",
+    "format": "prettier --write .",
+    "check-format": "prettier --check ."
+  }
+}
