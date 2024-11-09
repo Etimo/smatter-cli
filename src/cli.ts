@@ -11,7 +11,7 @@ import {
 } from '@clack/prompts';
 import color from 'picocolors';
 import { simpleGit } from 'simple-git';
-import { retro } from 'gradient-string';
+import { mind as retro } from 'gradient-string';
 
 // Helper function to handle cancellation
 function handleCancel() {
@@ -42,14 +42,13 @@ async function main() {
   });
 
   intro(`
-      ${retro('▄▄▄▄▄▄▄ ▄▄   ▄▄ ▄▄▄▄▄▄ ▄▄▄▄▄▄▄ ▄▄▄▄▄▄▄ ▄▄▄▄▄▄▄ ▄▄▄▄▄▄')}
-      ${retro('█       █  █▄█  █      █       █       █       █   ▄  █')}
-      ${retro('█  ▄▄▄▄▄█       █  ▄   █▄     ▄█▄     ▄█    ▄▄▄█  █ █ █')}
-      ${retro('█ █▄▄▄▄▄█       █ █▄█  █ █   █   █   █ █   █▄▄▄█   █▄▄█')}
-      ${retro('█▄▄▄▄▄  █       █      █ █   █   █   █ █    ▄▄▄█    ▄▄  ')}
-      ${retro(' ▄▄▄▄▄█ █ ██▄██ █  ▄   █ █   █   █   █ █   █▄▄▄█   █  █')}
-      ${retro('█▄▄▄▄▄▄▄█▄█   █▄█▄█ █▄▄█ █▄▄▄█   █▄▄▄█ █▄▄▄▄▄▄▄█▄▄▄█  █')}
-    `);
+    ${retro('███████╗███╗   ███╗ █████╗ ████████╗████████╗███████╗██████╗ ')}
+    ${retro('██╔════╝████╗ ████║██╔══██╗╚══██╔══╝╚══██╔══╝██╔════╝██╔══██╗')}
+    ${retro('███████╗██╔████╔██║███████║   ██║      ██║   █████╗  ██████╔╝')}
+    ${retro('╚════██║██║╚██╔╝██║██╔══██║   ██║      ██║   ██╔══╝  ██╔══██╗')}
+    ${retro('███████║██║ ╚═╝ ██║██║  ██║   ██║      ██║   ███████╗██║  ██║')}
+    ${retro('╚══════╝╚═╝     ╚═╝╚═╝  ╚═╝   ╚═╝      ╚═╝   ╚══════╝╚═╝  ╚═╝')}
+  `);
 
   intro(color.bgCyan(color.black(' Smatter Coding Assessment ')));
 
