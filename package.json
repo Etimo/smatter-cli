@@ -1,7 +1,7 @@
 {
   "license": "MIT",
-  "name": "smatter-cli",
-  "version": "1.0.2",
+  "name": "create-smatter-case",
+  "version": "1.0.1",
   "description": "CLI for Smatter",
   "keywords": [],
   "homepage": "",
@@ -14,7 +14,6 @@
     "url": "git+https://github.com/henrik-westoo/smatter-cli.git"
   },
   "bin": {
-    "name": "create-smatter-case",
     "create-smatter-case": "./dist/cli.js"
   },
   "files": [

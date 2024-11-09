@@ -1,5 +1,11 @@
 # smatter-cli
 
+## 1.0.1
+
+### Patch Changes
+
+- 0204143: init
+
 ## 1.0.2
 
 ### Patch Changes
