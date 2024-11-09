@@ -1,5 +1,11 @@
 # smatter-cli
 
+## 1.0.2
+
+### Patch Changes
+
+- 0ef9448: Changed bin name
+
 ## 1.1.0
 
 ### Minor Changes
