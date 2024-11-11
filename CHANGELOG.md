@@ -1,5 +1,11 @@
 # smatter-cli
 
+## 1.0.3
+
+### Patch Changes
+
+- acfed10: updated ascii art
+
 ## 1.0.2
 
 ### Patch Changes
