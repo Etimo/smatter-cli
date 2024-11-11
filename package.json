@@ -1,7 +1,7 @@
 {
   "license": "MIT",
   "name": "create-smatter-case",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "CLI for Smatter",
   "keywords": [],
   "homepage": "",
@@ -34,7 +34,7 @@
     "check-format": "prettier --check .",
     "test": "vitest run",
     "dev": "tsx src/cli.ts",
-    "local-release": "changeset version && changeset publish",
+    "local-release": "npm run ci && npx changeset && changeset version && changeset publish",
     "prepublishOnly": "npm run ci"
   },
   "dependencies": {
