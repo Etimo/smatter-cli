@@ -11,7 +11,7 @@ import {
 } from '@clack/prompts';
 import color from 'picocolors';
 import { simpleGit } from 'simple-git';
-import { retro } from 'gradient-string';
+import gradient from 'gradient-string';
 
 // Helper function to handle cancellation
 function handleCancel() {
@@ -41,15 +41,17 @@ async function main() {
     handleCancel();
   });
 
+  const etimoGradient = gradient(['#5c9bd8', '#6eb1ef', '#5c9bd8']);
+
   intro(`
-    ${retro('  █╗       ██╗                                              ')}
-    ${retro('  ╚╝  ██╗  ╚═╝   ████████╗████████╗██╗███╗   ███╗ ██████╗   ')}
-    ${retro('  █╗  ╚═╝  ██╗   ██╔════╝╚══██╔══╝ ██║████╗ ████║██╔═══██╗  ')}
-    ${retro('  █║  ██╗  ██║   █████╗     ██║    ██║██╔████╔██║██║   ██║  ')}
-    ${retro('  █║  ██║  ██║   ██╔══╝     ██║    ██║██║╚██╔╝██║██║   ██║  ')}
-    ${retro('  ╚╝  ██║  ╚═╝   ███████╗   ██║    ██║██║ ╚═╝ ██║╚██████╔╝  ')}
-    ${retro('      ██║        ╚══════╝   ╚═╝    ╚═╝╚═╝     ╚═╝ ╚═════╝   ')}
-    ${retro('      ╚═╝                                                   ')}
+    ${etimoGradient('  █╗       ██╗                                              ')}
+    ${etimoGradient('  ╚╝  ██╗  ╚═╝   ███████╗ ████████╗ ██╗ ███╗   ███╗  ██████╗   ')}
+    ${etimoGradient('  █╗  ╚═╝  ██╗   ██╔════╝ ╚══██╔══╝ ██║ ████╗ ████║ ██╔═══██╗  ')}
+    ${etimoGradient('  █║  ██╗  ██║   █████╗      ██║    ██║ ██╔████╔██║ ██║   ██║  ')}
+    ${etimoGradient('  █║  ██║  ██║   ██╔══╝      ██║    ██║ ██║╚██╔╝██║ ██║   ██║  ')}
+    ${etimoGradient('  ╚╝  ██║  ╚═╝   ███████╗    ██║    ██║ ██║ ╚═╝ ██║ ╚██████╔╝  ')}
+    ${etimoGradient('      ██║        ╚══════╝    ╚═╝    ╚═╝ ╚═╝     ╚═╝  ╚═════╝   ')}
+    ${etimoGradient('      ╚═╝                                                   ')}
   `);
 
   // intro(`
