@@ -1,5 +1,11 @@
 # smatter-cli
 
+## 1.0.6
+
+### Patch Changes
+
+- 699cc4f: Update repo URL
+
 ## 1.0.5
 
 ### Patch Changes
