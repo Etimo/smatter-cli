@@ -64,7 +64,7 @@ async function main() {
   //   ${retro('╚══════╝╚═╝     ╚═╝╚═╝  ╚═╝   ╚═╝      ╚═╝   ╚══════╝╚═╝  ╚═╝')}
   // `);
 
-  intro(color.bgCyan(color.black(' Smatter Coding Assessment ')));
+  intro(color.bgCyan(color.black(' Smatter Code Case ')));
 
   note(
     `🐦 Welcome to the Smatter CLI!\nAnswer a few questions, and we'll clone the project to your machine and set up a git branch for you.`,
@@ -111,20 +111,18 @@ async function main() {
     s.start('Cloning the Smatter repository');
 
     try {
-      await git.clone(
-        'https://github.com/Etimo/smatter.git',
-        './smatter-repo',
-        ['--progress'],
-      );
+      await git.clone('https://github.com/Etimo/smatter.git', './smatter', [
+        '--progress',
+      ]);
       s.stop('Repository cloned successfully');
     } catch (gitError) {
       console.log('Debug: Clone failed');
       throw gitError;
     }
 
-    await git.cwd('smatter-repo');
+    await git.cwd('smatter');
 
-    const branchName = `assessment/${username.toString()}/${caseType}`;
+    const branchName = `case/${username.toString()}/${caseType}`;
     s.start('Creating your work branch');
     await git.checkoutLocalBranch(branchName);
     s.stop('Branch created successfully');
@@ -132,7 +130,7 @@ async function main() {
     outro(
       color.green(`
   ✨ All set! Here's what to do next:
-  ${color.cyan('1.')} Open the 'smatter-repo' directory in your favorite code editor
+  ${color.cyan('1.')} Open the 'smatter' directory in your favorite code editor
   ${color.cyan('2.')} Follow the instructions in the README.md file
   ${color.cyan('3.')} Have fun! 🚀
   ${color.yellow('Your work branch:')} ${branchName}
