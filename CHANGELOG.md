@@ -1,5 +1,11 @@
 # smatter-cli
 
+## 1.0.7
+
+### Patch Changes
+
+- 9be23e0: Update repo name
+
 ## 1.0.6
 
 ### Patch Changes
