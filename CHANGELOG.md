@@ -1,5 +1,11 @@
 # smatter-cli
 
+## 1.0.8
+
+### Patch Changes
+
+- 5fdd385: tweaks
+
 ## 1.0.7
 
 ### Patch Changes
