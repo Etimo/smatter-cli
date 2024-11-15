@@ -12,6 +12,7 @@ import {
 import color from 'picocolors';
 import { simpleGit } from 'simple-git';
 import gradient from 'gradient-string';
+import process from 'node:process';
 
 // Helper function to handle cancellation
 function handleCancel() {
@@ -66,7 +67,7 @@ async function main() {
   intro(color.bgCyan(color.black(' Smatter Coding Assessment ')));
 
   note(
-    `Welcome to the Smatter CLI!\nAnswer a few questions, and we'll clone the project to your machine and set up a git branch for you.`,
+    `🐦 Welcome to the Smatter CLI!\nAnswer a few questions, and we'll clone the project to your machine and set up a git branch for you.`,
   );
 
   const caseType = await prompt(() =>
@@ -101,28 +102,37 @@ async function main() {
 
   const s = spinner();
   try {
-    // const git = simpleGit();
-    // clone repo --- here we could have different repos depending on caseType
+    const git = simpleGit({
+      timeout: {
+        block: 10000, // 10 seconds
+      },
+    });
+
     s.start('Cloning the Smatter repository');
-    // await git.clone(
-    //   'https://github.com/smatter-url.git',
-    //   './smatter',
-    // );
-    s.stop('Repository cloned successfully');
 
-    // cd into the project directory
-    // process.chdir('./smatter');
+    try {
+      await git.clone(
+        'https://github.com/Etimo/smatter.git',
+        './smatter-repo',
+        ['--progress'],
+      );
+      s.stop('Repository cloned successfully');
+    } catch (gitError) {
+      console.log('Debug: Clone failed');
+      throw gitError;
+    }
 
-    // create and checkout work branch --- we might want to have it pre-created
+    await git.cwd('smatter-repo');
+
     const branchName = `assessment/${username.toString()}/${caseType}`;
     s.start('Creating your work branch');
-    // await git.checkoutLocalBranch(branchName);
+    await git.checkoutLocalBranch(branchName);
     s.stop('Branch created successfully');
 
     outro(
       color.green(`
   ✨ All set! Here's what to do next:
-  ${color.cyan('1.')} Open the current directory in your favorite code editor
+  ${color.cyan('1.')} Open the 'smatter-repo' directory in your favorite code editor
   ${color.cyan('2.')} Follow the instructions in the README.md file
   ${color.cyan('3.')} Have fun! 🚀
   ${color.yellow('Your work branch:')} ${branchName}
