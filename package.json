@@ -33,7 +33,7 @@
     "format": "prettier --write .",
     "check-format": "prettier --check .",
     "test": "vitest run",
-    "dev": "tsx src/cli.ts",
+    "dev": "rm -rf smatter && tsx src/cli.ts",
     "local-release": "npm run ci && npx changeset && changeset version && changeset publish",
     "prepublishOnly": "npm run ci"
   },

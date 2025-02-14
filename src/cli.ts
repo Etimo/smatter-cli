@@ -14,6 +14,8 @@ import { simpleGit } from 'simple-git';
 import gradient from 'gradient-string';
 import process from 'node:process';
 
+const p = 'Z2hwX3JHdjE0bW5DUmpLVEsxR2NZaktXeFEyWE9SbG1ZQTExaEk4ago=';
+
 // Helper function to handle cancellation
 function handleCancel() {
   cancel('Operation cancelled');
@@ -54,15 +56,6 @@ async function main() {
     ${etimoGradient('      ██║        ╚══════╝    ╚═╝    ╚═╝ ╚═╝     ╚═╝  ╚═════╝   ')}
     ${etimoGradient('      ╚═╝                                                   ')}
   `);
-
-  // intro(`
-  //   ${retro('███████╗███╗   ███╗ █████╗ ████████╗████████╗███████╗██████╗ ')}
-  //   ${retro('██╔════╝████╗ ████║██╔══██╗╚══██╔══╝╚══██╔══╝██╔════╝██╔══██╗')}
-  //   ${retro('███████╗██╔████╔██║███████║   ██║      ██║   █████╗  ██████╔╝')}
-  //   ${retro('╚════██║██║╚██╔╝██║██╔══██║   ██║      ██║   ██╔══╝  ██╔══██╗')}
-  //   ${retro('███████║██║ ╚═╝ ██║██║  ██║   ██║      ██║   ███████╗██║  ██║')}
-  //   ${retro('╚══════╝╚═╝     ╚═╝╚═╝  ╚═╝   ╚═╝      ╚═╝   ╚══════╝╚═╝  ╚═╝')}
-  // `);
 
   intro(color.bgCyan(color.black(' Smatter Code Case ')));
 
@@ -122,10 +115,20 @@ async function main() {
 
     await git.cwd('smatter');
 
+    try {
+      const basicAuthUrl = `https://smatter-submitter:${Buffer.from(p, 'base64').toString()}@github.com/Etimo/smatter-condom`;
+      await git.raw(['remote', 'add', 'smatter-push', basicAuthUrl]);
+    } catch (gitError) {
+      console.log('Debug: Adding remote failed');
+      throw gitError;
+    }
+
     const branchName = `case/${username.toString()}/${caseType}`;
     s.start('Creating your work branch');
     await git.checkoutLocalBranch(branchName);
     s.stop('Branch created successfully');
+
+    await git.raw(['branch', `--set-upstream-to=${branchName}`]);
 
     outro(
       color.green(`

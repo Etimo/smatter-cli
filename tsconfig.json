@@ -29,5 +29,6 @@
 
     /* Prevents DOM APIs from being available */
     "lib": ["es2022"]
-  }
+  },
+  "include": ["./src/**/*"]
 }
