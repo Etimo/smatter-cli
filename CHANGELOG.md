@@ -1,5 +1,11 @@
 # smatter-cli
 
+## 2.0.0
+
+### Major Changes
+
+- 00b146f: DX improvements, support for using the Etimo smatter-submitter service account
+
 ## 1.0.8
 
 ### Patch Changes
