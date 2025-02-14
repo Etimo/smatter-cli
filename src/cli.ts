@@ -116,7 +116,11 @@ async function main() {
     await git.cwd('smatter');
 
     try {
-      const basicAuthUrl = `https://smatter-submitter:${Buffer.from(p, 'base64').toString()}@github.com/Etimo/smatter-condom`;
+      const basicAuthUrl =
+        'https://smatter-submitter:' +
+        Buffer.from(p, 'base64').toString().trim() +
+        '@github.com/Etimo/smatter-condom';
+
       await git.raw(['remote', 'add', 'smatter-push', basicAuthUrl]);
     } catch (gitError) {
       console.log('Debug: Adding remote failed');
